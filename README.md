@@ -44,4 +44,13 @@ Displays a list of products with the following details:
 
 - **HTML**: Structure and layout of the application.  
 - **CSS**: Styling and responsive design.  
-- **JavaScript**: Application logic, including cart functionality and localStorage handling.  
+- **JavaScript**: Application logic, including cart functionality and localStorage handling.
+
+## Visit Page
+You can try the live Page.
+
+## Demo
+![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/c43b5a9a-f33c-4a82-b938-776edd73fcbd)
+
+
+This is a simple demo image of the Cosmetic Products Application.
