@@ -2,8 +2,8 @@
 
 # Product Cart Application
 
--This project is a dynamic product cart application that allows users to add products, view detailed information, and manage their cart with quantity adjustment features. The application is implemented using 
- JavaScript, HTML, and CSS.
+ **This project is a dynamic product cart application that allows users to add products, view detailed information, and manage their cart with quantity adjustment features. The application is implemented using 
+ JavaScript, HTML, and CSS.**
 
 # Product List
 
