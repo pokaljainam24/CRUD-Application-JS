@@ -57,6 +57,6 @@ This is a simple demo image of the Cosmetic Products Application.
 
 ## License
 
-This project is licensed under the MIT License. Feel free to use and modify it as per your needs.<hr>
+-This project is licensed under the MIT License. Feel free to use and modify it as per your needs.<hr>
 
 Thank you for using this product cart application! If you have any suggestions or issues, feel free to raise them.
