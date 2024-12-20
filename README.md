@@ -47,7 +47,7 @@ Displays a list of products with the following details:
 - **JavaScript**: Application logic, including cart functionality and localStorage handling.
 
 ## Visit Page
-You can try the live Page.
+[You can try the live Page.](https://cosmetic-products-app-5fd8bf.netlify.app)
 
 ## Demo
 ![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/c43b5a9a-f33c-4a82-b938-776edd73fcbd)
