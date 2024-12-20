@@ -1,6 +1,6 @@
-﻿# **CRUD-Product-Web-page-JS**
+﻿# CRUD-Product-Web-page-JS
 
-## **Product Cart Application**
+## Product Cart Application
 
  -This project is a dynamic product cart application that allows users to add products, view detailed information, and manage their cart with quantity adjustment features. The application is implemented using 
   JavaScript, HTML, and CSS.
@@ -27,7 +27,7 @@ Display a list of products with the following details:
 ## Cart Management
 
 -View all selected products in the cart.
--**Display detailed information about each product in the cart, including**: Quantity (adjustable with + and - buttons).
+-Display detailed information about each product in the cart, including: Quantity (adjustable with + and - buttons).
 -Total price calculation.
 -Remove a product from the cart.
 -Persist cart data using localStorage to maintain the state across page reloads.
