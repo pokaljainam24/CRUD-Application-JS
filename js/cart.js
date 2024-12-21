@@ -24,9 +24,9 @@ function renderCart() {
         total += subtotal;
 
         const cartItem = `
-            <div class="cart-item d-flex flex-column bg-light text-dark w-100 p-3 rounded mb-3">
+            <div class="cart-item d-flex flex-column bg-dark text-light w-100 p-3 rounded mb-3">
                 <div class="d-flex w-100">
-                    <img src="${product.image}" alt="${product.title}" class="cart-item-image me-3" style="width: 300px; height: 300px;">
+                    <img src="${product.image}" alt="${product.title}" class="cart-item-image me-3 bg-light" style="width: 300px; height: 300px;">
                     <div class="text-start w-100">
                         <h5 class="fw-bold">${product.title}</h5>
                         <p><strong>Description:</strong> ${product.description}</p>
@@ -45,7 +45,7 @@ function renderCart() {
                     </div>
                     <p class="text-end mx-5 m-auto"><strong>Subtotal:</strong> £${subtotal.toFixed(2)}</p>
                 </div>
-            </div>
+            </div> <hr class="border border-warning border-2">
         `;
         cartContainer.innerHTML += cartItem;
     });
