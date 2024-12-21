@@ -1877,6 +1877,8 @@ function renderProducts() {
     }
 }
 
+/************************************************* buy now *************************************************************** */
+
 function buyNow(productId) {
     // Find the product by its ID
     const product = products.find(p => p.id === productId);
@@ -1905,10 +1907,6 @@ function buyNow(productId) {
         alert(`Purchasing ${product.title}`);
         // Optionally redirect to a checkout page
     };
-
-    // Show the modal
-    const productDetailModal = new bootstrap.Modal(document.getElementById('productDetailModal'));
-    productDetailModal.show();
 }
 
 
@@ -1920,36 +1918,51 @@ function generateStars(rating) {
     return '⭐'.repeat(fullStars) + (halfStar ? '✴️' : '') + '⚪'.repeat(emptyStars);
 }
 
+function buyNow(productId) {
+    addToCart(productId);
+    document.location.assign('./cart.html');
+}
 
+
+/*************************************** add to card **************************************************/
 
 function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    // Check if the product is already in the cart
     const existingProductIndex = cart.findIndex(item => item.id === productId);
+
     if (existingProductIndex >= 0) {
-        // Product already in cart, increase quantity
+        // If the product exists, increase its quantity
         cart[existingProductIndex].quantity += 1;
     } else {
-        // Add new product to the cart
+        // Find the product in the main product list
         const product = products.find(p => p.id === productId);
-        cart.push({
-            id: product.id,
-            title: product.title,
-            price: product.price,
-            quantity: 1,
-            image: product.images[0]
-        });
+        if (product) {
+            // Add the new product at the beginning of the cart
+            cart.unshift({
+                id: product.id,
+                title: product.title,
+                description: product.description,
+                category: product.category,
+                brand: product.brand,
+                price: product.price,
+                stock: product.stock,
+                image: product.images[0], // Assume the first image is used
+                quantity: 1 // Default quantity
+            });
+        }
     }
 
     // Save the updated cart to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Re-render the cart and update the badge
+    renderProducts();
     updateCartBadge();
 }
 
-function buyNow(productId) {
-    addToCart(productId);
-    window.location.href = './cart.html';
-}
+
 
 function updateCartBadge() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -1963,6 +1976,8 @@ function updateCartBadge() {
         cartBadge.style.display = 'none';
     }
 }
+
+/************************************************ after render 24 card thab befor 6 card is added in this latest product section **************/
 
 function addProductCard(product) {
     const productCol = document.createElement("div");
