@@ -7,7 +7,7 @@ This project is a dynamic product cart application that allows users to add prod
 ---
 
 ## Visit Page**
-Visit My Cosmetic Website.....[You can try the live Page..📽️](https://quotes-application-247d5b.netlify.app)
+Visit My Cosmetic Website.....[You can try the live Page..📽️](https://cosmetic-products-658896.netlify.app)
 
 ## Demo**
 ![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/3a2fc476-6397-4b7f-b247-93540d1328db)
