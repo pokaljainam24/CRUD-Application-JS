@@ -44,4 +44,22 @@ Displays a list of products with the following details:
 
 - **HTML**: Structure and layout of the application.  
 - **CSS**: Styling and responsive design.  
-- **JavaScript**: Application logic, including cart functionality and localStorage handling.  
+- **JavaScript**: Application logic, including cart functionality and localStorage handling.
+
+---
+
+## Visit Page
+-Visit My Cosmetic Website.....[You can try the live Page..📽️](https://quotes-application-247d5b.netlify.app)
+
+## Demo
+![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/3a2fc476-6397-4b7f-b247-93540d1328db)
+
+This is a simple demo image of the Cosmetic Products Web-page..⭐
+
+---
+
+## License
+
+-This project is licensed under the MIT License. Feel free to use and modify it as per your needs.
+
+## Thank you for using this product cart application! If you have any suggestions or issues, feel free to raise them.
