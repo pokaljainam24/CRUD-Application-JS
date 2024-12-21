@@ -38,8 +38,10 @@
     margin: auto !important;
 }
 
-.card-body {
-    height: 100vh;
+.btn-link{
+    background-color: #157175 !important;
+    color: aliceblue !important;
+    text-decoration: none !important;
 }
 
 #card-body {
@@ -72,12 +74,9 @@
     font-size: 14px;
 }
 
-.add {
-    margin-right: 190px;
-}
-
-#add {
-    margin-right: 250px;
+#btns {
+    justify-content: space-between;
+    height: 40px !important;
 }
 
 .icon-box {

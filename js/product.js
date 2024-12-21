@@ -1847,35 +1847,79 @@ function renderProducts() {
 
         const productCard = `
     <div class="col-md-4 col-sm-6 mb-4">
-        <div class="card border-0 shadow-sm">
-            ${imageContent}
-            <div class="card-body text-start bg-dark text-light">
-                <p id="text-color" class="text-success  mb-1 fw-bold">${product.category}</p>
-                <h6 class="fw-bold text-primary mt-3"><strong class="text-light">Product Name : </strong>${product.title}</h6>
-                <h6 class="fw-bold text-info mt-1"><strong class="text-light">Description : </strong>${product.description}</h6>
-                <p class="text-primary fw-bold"><span class="text-light">Prise : </span>£${product.price.toFixed(2)}</p>
-                <p class="text-danger fw-bold"><strong class="text-light">Discount: </strong>${product.discountPercentage}%</p>
-                <p class="text-info fw-bold"><span class="text-light">Stock: </span>${product.stock}</p>
-                <p class="mb-0 text-warning"><span class="text-light fw-bold">Ratings:</span> ${generateStars(product.rating)} <span class="text-success fw-bold">${product.rating}</span></p><hr>
+    <div class="card border-0 shadow-sm">
+        ${imageContent}
+        <div class="card-body text-start bg-dark text-light">
+            <p id="text-color" class="text-success mb-1 fw-bold">${product.category}</p>
+            <h6 class="fw-bold text-primary mt-3"><strong class="text-light">Product Name:</strong> ${product.title}</h6>
+            <h6 class="fw-bold text-info mt-1"><strong class="text-light">Description:</strong> ${product.description}</h6>
+            <p class="text-primary fw-bold"><span class="text-light">Price:</span> £${product.price.toFixed(2)}</p>
+            <p class="text-danger fw-bold"><strong class="text-light">Discount:</strong> ${product.discountPercentage}%</p>
+            <p class="text-info fw-bold"><span class="text-light">Stock:</span> ${product.stock}</p>
+            <p class="mb-0 text-warning">
+                <span class="text-light fw-bold">Ratings:</span> ${generateStars(product.rating)} 
+                <span class="text-success fw-bold">${product.rating}</span>
+            </p>
+            <hr>
+            <div id="btns" class="d-flex align-items-center justify-content-between gap-2">
+              <button class="btn fs-2 add" onclick="addToCart(${product.id})">
+                <i class="bi bi-cart4 text-warning"></i>
+              </button>
+            <!-- More Details Button -->
+              <button class="btn btn-link p-2" data-bs-toggle="modal" data-bs-target="#detailsModal${product.id}">
+                More Details<span class="fw-bold">...</span>
+              </button>
+              <button class="btn btn-success buy" onclick="buyNow(${product.id})">
+                Buy Now
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="detailsModal${product.id}" tabindex="-1" aria-labelledby="detailsModalLabel${product.id}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark">
+                <h5 class="modal-title text-info" id="detailsModalLabel${product.id}">${product.title}</h5>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark text-light">
                 <p><strong>SKU:</strong> ${product.sku}</p>
                 <p><strong>Weight:</strong> ${product.weight} kg</p>
                 <p><strong>Warranty:</strong> ${product.warrantyInformation}</p>
                 <p><strong>Shipping Info:</strong> ${product.shippingInformation}</p>
                 <p><strong>Return Policy:</strong> ${product.returnPolicy}</p>
                 <p><strong>Order Policy:</strong> ${product.minimumOrderQuantity}</p>
-                <p><strong>Availability-Status:</strong> ${product.availabilityStatus}</p>
-                <p><strong>Meta:</strong> ${product.meta ? product.meta : "No additional information"}</p><hr>
-                <button class="btn fs-2 add" onclick="addToCart(${product.id})"><i class="bi bi-cart4 text-warning"></i></button>
-                <button class="btn btn-success buy" onclick="buyNow(${product.id})">Buy Now</button>
+                <p><strong>Availability Status:</strong> ${product.availabilityStatus}</p>
+                <p><strong>Created Date:</strong> ${product.meta.createdAt}</p>
+                <p><strong>Updated Date:</strong> ${product.meta.updatedAt}</p>
+                <p><strong>Barcode:</strong> ${product.meta.barcode}</p>
+                <p><strong>Scan Qr: </strong><img src="${product.meta.qrCode}" alt="img"</p>
+            </div>
+            <div class="modal-footer bg-dark">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 `;
-
-
         row.innerHTML += productCard;  // Append to the current row
     }
 }
+
+function toggleDetails(button) {
+    const details = button.nextElementSibling;
+    if (details.classList.contains('d-none')) {
+        details.classList.remove('d-none');
+        button.textContent = "Less Details";
+    } else {
+        details.classList.add('d-none');
+        button.textContent = "More Details";
+    }
+}
+
 
 /************************************************* buy now *************************************************************** */
 
@@ -2036,7 +2080,7 @@ function addProductCard(product) {
                 <p class="text-light"><strong>Return Policy:</strong> ${product.returnPolicy}</p>
                 <p class="text-light"><strong>Order Policy:</strong> ${product.minimumOrderQuantity}</p>
                 <p class="text-light"><strong>Availability-Status:</strong> ${product.availabilityStatus}</p>
-                <p class="text-light"><strong>Meta:</strong> ${product.meta ? product.meta : "No additional information"}</p><hr class="text-light">
+                <p class="text-light"><strong>Meta:</strong> ${product.meta.qrCode}</p><hr class="text-light">
           <button class="btn fs-2" id="add" onclick="addToCart(${product.id})"><i class="bi bi-cart4 text-warning"></i></button>
           <button class="btn btn-success buy"  onclick="buyNow(${product.id})">Buy Now</button>
         </div>
