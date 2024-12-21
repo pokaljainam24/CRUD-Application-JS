@@ -6,6 +6,16 @@ This project is a dynamic product cart application that allows users to add prod
 
 ---
 
+## Visit Page**
+Visit My Cosmetic Website.....[You can try the live Page..📽️](https://quotes-application-247d5b.netlify.app)
+
+## Demo**
+![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/3a2fc476-6397-4b7f-b247-93540d1328db)
+
+This is a simple demo image of the Cosmetic Products Web-page..⭐
+
+---
+
 ## Product List
 
 Displays a list of products with the following details:
@@ -45,16 +55,6 @@ Displays a list of products with the following details:
 - **HTML**: Structure and layout of the application.  
 - **CSS**: Styling and responsive design.  
 - **JavaScript**: Application logic, including cart functionality and localStorage handling.
-
----
-
-## Visit Page**
-Visit My Cosmetic Website.....[You can try the live Page..📽️](https://quotes-application-247d5b.netlify.app)
-
-## Demo**
-![Screenshot 2024-12-20 224206](https://github.com/user-attachments/assets/3a2fc476-6397-4b7f-b247-93540d1328db)
-
-This is a simple demo image of the Cosmetic Products Web-page..⭐
 
 ---
 
